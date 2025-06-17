@@ -1,4 +1,4 @@
-#Python OOPs - Daily Learning Log 🧠🐍
+Python OOPs - Daily Learning Log 🧠🐍
 
 Welcome to my Object-Oriented Programming (OOP) in Python repository!
 This repo is a structured collection of my daily learning, examples, and practice exercises as I explore OOP concepts in Python. 🚀
