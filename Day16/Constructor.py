@@ -37,3 +37,30 @@ laptop2 = Laptop("Apple", "MacBook Pro")
 
 laptop1.display()  # Output: Laptop Brand: Dell, Model: XPS 13
 laptop2.display()  # Output: Laptop Brand: Apple, Model: MacBook Pro
+
+
+# taking input from user
+
+class Laptop:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+    
+    def display(self):
+        print(f"Laptop Brand: {self.brand}, Model: {self.model}")
+
+# Taking input from the user
+brand1 = input("Enter brand of first laptop: ")
+model1 = input("Enter model of first laptop: ")
+
+brand2 = input("Enter brand of second laptop: ")
+model2 = input("Enter model of second laptop: ")
+
+laptop1 = Laptop(brand1, model1)
+laptop2 = Laptop(brand2, model2)
+
+laptop1.display()
+laptop2.display()
+n = Human("Nagarjun",20)
+
+Human.calling(n)  # Alternative way to call the method
