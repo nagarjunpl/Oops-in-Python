@@ -21,8 +21,19 @@ class Human:
     def calling(self):
         print(f"{self.name} age is {self.age} ")
 
-n = Human("Nagarjun",20)
 
-Human.calling(n)  # Alternative way to call the method
+# Creating multiple objects
 
+class Laptop:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+    
+    def display(self):
+        print(f"Laptop Brand: {self.brand}, Model: {self.model}")
 
+laptop1 = Laptop("Dell", "XPS 13")
+laptop2 = Laptop("Apple", "MacBook Pro")
+
+laptop1.display()  # Output: Laptop Brand: Dell, Model: XPS 13
+laptop2.display()  # Output: Laptop Brand: Apple, Model: MacBook Pro
