@@ -32,7 +32,6 @@ class ATM:
         print(self.__balance)
     
 npl = ATM(1000)
-
 print(npl.balance())  # Output: 1000
 
 
@@ -47,6 +46,5 @@ class Database:
         print(self.storage.get(key, "Key not found"))
     
 db = Database()
-
 db.write("name", "Nagarjun")  # Writing data to the database
 db.read("name")  
