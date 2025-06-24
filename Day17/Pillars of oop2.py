@@ -74,8 +74,17 @@ class PayPalPayment(Payment):
         total = amount + 15
         print(f"Total charged: ₹{total:.2f}")
 
+class UPIPayment(Payment):
+    def process_payment(self, amount):
+        print(f"Processing UPI payment of ₹{amount} with no extra fee")
+        print(f"Total charged: ₹{amount:.2f}")
+
+# Creating objects
 p1 = CreditCardPayment()
 p2 = PayPalPayment()
+p3 = UPIPayment()
 
+# Calling the overridden method
 p1.process_payment(1000)
 p2.process_payment(1000)
+p3.process_payment(1000)
