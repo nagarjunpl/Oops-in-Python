@@ -56,3 +56,18 @@ n3 = SMSNotification()
 n1.send()  # Output: NOTIFICATION SENT
 n2.send()  # Output: EMAIL SENT
 n3.send()  # Output: SMS SENT
+
+# Polymorphism with payment system
+class Payment:
+    def process_payment(self, amount):
+        print(f"Processing payment of ₹{amount}")
+
+class CreditCardPayment(Payment):
+    def process_payment(self, amount):
+        print(f"Processing Credit Card payment of ₹{amount} with 2% fee")
+        total = amount + (amount * 0.02)
+        print(f"Total charged: ₹{total:.2f}")    
+
+p1 = CreditCardPayment()
+
+p1.process_payment(1000)
