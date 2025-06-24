@@ -68,6 +68,14 @@ class CreditCardPayment(Payment):
         total = amount + (amount * 0.02)
         print(f"Total charged: ₹{total:.2f}")    
 
+class PayPalPayment(Payment):
+    def process_payment(self, amount):
+        print(f"Processing PayPal payment of ₹{amount} with ₹15 fixed fee")
+        total = amount + 15
+        print(f"Total charged: ₹{total:.2f}")
+
 p1 = CreditCardPayment()
+p2 = PayPalPayment()
 
 p1.process_payment(1000)
+p2.process_payment(1000)
