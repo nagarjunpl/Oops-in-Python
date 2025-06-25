@@ -23,3 +23,17 @@ print(n.get_age())
 n.set_name("Nagarjun")
 
 print(n.get_name())
+
+
+# Method Overriding
+
+class Animal:
+    def make_sound(self):
+        print("Animal making sound")
+
+class dog(Animal):
+    def make_sound(self):
+        print("Bark")
+
+a = dog()
+a.make_sound()
