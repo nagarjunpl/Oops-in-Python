@@ -120,3 +120,25 @@ r = Rectangle(5, 10)
 
 c.calc_area()
 r.calc_area()
+
+
+# Getters and Setters
+
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance
+
+    def get_balance(self):
+        print(self.__balance)
+    
+    def set_balance(self, update_balance):
+        if update_balance<0:
+            print("ERROR : Balance cannot be negative value")
+            return
+        self.__balance = update_balance
+        print(self.__balance)
+
+b = BankAccount(500)
+
+b.get_balance()
+b.set_balance(-1)
