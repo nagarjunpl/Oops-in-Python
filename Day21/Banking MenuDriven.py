@@ -42,3 +42,35 @@ class CurrentAccount(Account):  # Polymorphism
         else:
             print("Withdrawal amount exceeds overdraft limit.")
 
+
+class Bank:
+    def __init__(self, name, city):
+        self.__name = name
+        self.__city = city
+        self.__accounts = {}
+
+    def create_account(self, account_id, holder_name, acc_type):
+        if account_id in self.__accounts:
+            print("Account ID already exists.")
+            return None
+
+        if acc_type == "savings":
+            new_account = SavingsAccount(account_id, holder_name)
+        elif acc_type == "current":
+            new_account = CurrentAccount(account_id, holder_name)
+        else:
+            print("Invalid account type.")
+            return None
+
+        self.__accounts[account_id] = new_account
+        print("Account creation successful.")
+        return new_account
+
+    def get_account(self, account_id):
+        if account_id not in self.__accounts:
+            print("Account not found.")
+            return None
+        acc = self.__accounts[account_id]
+        print(f"\nAccount Details:\n{acc}")
+        return acc
+
