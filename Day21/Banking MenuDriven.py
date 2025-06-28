@@ -79,58 +79,59 @@ class Bank:
 
 npl = Bank("Nagarjun Bank of India", "Mandya")
 
-print("\n--- Welcome to Nagarjun Bank ---")
-print("1. Create Account")
-print("2. Deposit")
-print("3. Withdraw")
-print("4. Check Balance")
-print("5. Calculate Interest (Savings Only)")
-print("6. Exit")
-choice = input("Enter your choice: ")
+while True:
+    print("\n--- Welcome to Nagarjun Bank ---")
+    print("1. Create Account")
+    print("2. Deposit")
+    print("3. Withdraw")
+    print("4. Check Balance")
+    print("5. Calculate Interest (Savings Only)")
+    print("6. Exit")
+    choice = input("Enter your choice: ")
 
-if choice == '1':
-    acc_id = input("Enter Account ID: ")
-    name = input("Enter Holder Name: ")
-    acc_type = input("Enter Account Type (savings/current): ").lower()
-    npl.create_account(acc_id, name, acc_type)
+    if choice == '1':
+        acc_id = input("Enter Account ID: ")
+        name = input("Enter Holder Name: ")
+        acc_type = input("Enter Account Type (savings/current): ").lower()
+        npl.create_account(acc_id, name, acc_type)
 
-elif choice == '2':
-    acc_id = input("Enter Account ID: ")
-    acc = npl.get_account(acc_id)
-    if acc:
-        try:
-            amt = float(input("Enter amount to deposit: "))
-            acc.deposit(amt)
-        except ValueError:
-            print("Invalid amount. Must be a number.")
+    elif choice == '2':
+        acc_id = input("Enter Account ID: ")
+        acc = npl.get_account(acc_id)
+        if acc:
+            amt = input("Enter amount to deposit: ")
+            if amt.replace('.', '', 1).isdigit():
+                acc.deposit(float(amt))
+            else:
+                print("Invalid input. Enter a number.")
 
-elif choice == '3':
-    acc_id = input("Enter Account ID: ")
-    acc = npl.get_account(acc_id)
-    if acc:
-        try:
-            amt = float(input("Enter amount to withdraw: "))
-            acc.withdraw(amt)
-        except ValueError:
-            print("Invalid amount. Must be a number.")
+    elif choice == '3':
+        acc_id = input("Enter Account ID: ")
+        acc = npl.get_account(acc_id)
+        if acc:
+            amt = input("Enter amount to withdraw: ")
+            if amt.replace('.', '', 1).isdigit():
+                acc.withdraw(float(amt))
+            else:
+                print("Invalid input. Enter a number.")
 
-elif choice == '4':
-    acc_id = input("Enter Account ID: ")
-    acc = npl.get_account(acc_id)
-    if acc:
-        acc.check_balance()
+    elif choice == '4':
+        acc_id = input("Enter Account ID: ")
+        acc = npl.get_account(acc_id)
+        if acc:
+            acc.check_balance()
 
-elif choice == '5':
-    acc_id = input("Enter Account ID: ")
-    acc = npl.get_account(acc_id)
-    if isinstance(acc, SavingsAccount):
-        acc.calculate_interest()
+    elif choice == '5':
+        acc_id = input("Enter Account ID: ")
+        acc = npl.get_account(acc_id)
+        if isinstance(acc, SavingsAccount):
+            acc.calculate_interest()
+        else:
+            print("Interest calculation only for savings accounts.")
+
+    elif choice == '6':
+        print("Thank you for banking with Nagarjun Bank. Goodbye!")
+        break
+
     else:
-        print("Interest calculation only applies to savings accounts.")
-
-elif choice == '6':
-    print("Thank you for banking with Nagarjun Bank. Goodbye!")
-    break
-
-else:
-    print("Invalid choice. Please try again.")
+        print("Invalid choice. Please try again.")
