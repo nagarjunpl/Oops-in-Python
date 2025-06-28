@@ -30,3 +30,15 @@ class Account:
         return f"Account ID: {self.account_id}, Holder: {self.holder_name}, Balance: ₹{self._balance:.2f}"
 
 
+class CurrentAccount(Account):  # Polymorphism
+    def withdraw(self, amount):
+        over_draft_limit = 1000
+        if amount <= 0:
+            print("Amount must be greater than zero.")
+            return
+        if self._balance + over_draft_limit >= amount:
+            self._balance -= amount
+            print(f"Withdraw successful. Updated Balance: ₹{self._balance:.2f}")
+        else:
+            print("Withdrawal amount exceeds overdraft limit.")
+
