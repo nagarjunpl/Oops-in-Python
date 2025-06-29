@@ -29,13 +29,15 @@ class Student:
 
     def calculate_grade(self):
         print("Grade : ", end="")
-        average = self.calculate_average()*100
+        average = self.calculate_average()
         if  average >= 90:
             print("Grade: A")
         elif average >= 70:
             print("Grade: B")
         elif average >= 50:
             print("Grade: C")
+        elif average >= 35:
+            print("Grade: D")
         else:
             print("Grade: F")
 
