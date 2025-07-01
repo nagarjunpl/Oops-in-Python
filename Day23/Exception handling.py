@@ -31,12 +31,12 @@ finally:
 
 # Exception handling with else and finally blocks
 a = int(input("Enter A value: "))
-b = input("Enter B value: ")
+b = int(input("Enter B value: "))
 
 try:
     print(a/b)
 
-except ValueError as e:
+except Exception as e:
     print("An error occurred:", e)
 
 else:
@@ -44,3 +44,16 @@ else:
 
 finally:
     print("This block always executes, regardless of an error.")
+
+
+# Exception handling with custom exception
+try:
+    boy = input("who do you like? : ")
+    if boy.lower() == "nobody":
+        raise Exception("You should like someone!")
+    
+except Exception as e:
+    print("An error occurred:", e)
+
+else:
+    print(f"You like {boy}!")
