@@ -12,3 +12,11 @@ mpli.welcome("Harshith")
 
 import greet.greeting as greeting  # Importing the greeting module from greet package
 greeting.greet()
+
+
+# Importing the wikipedia module to fetch summaries of topics
+# First you need to install "pip install wikipedia" in your terminal
+
+import wikipedia
+
+print(wikipedia.summary("Puneeth rajkumar", sentences=10))  # Fetching a summary of the topic "Puneeth Rajkumar"
