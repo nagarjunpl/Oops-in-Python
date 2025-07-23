@@ -29,7 +29,15 @@ class Account:
     def __str__(self):
         return f"Account ID: {self.account_id}, Holder: {self.holder_name}, Balance: ₹{self._balance:.2f}"
 
+# ---- Savings Account Class ----
+class SavingsAccount(Account):
+    def calculate_interest(self):
+        # Method to calculate and print interest at 4% rate
+        interest_rate = 0.04  # 4% interest
+        interest = self._balance * interest_rate
+        print(f"Interest on balance: ₹{interest:.2f}")
 
+# ---- Current Account Class ----
 class CurrentAccount(Account):  # Polymorphism
     def withdraw(self, amount):
         over_draft_limit = 1000
@@ -77,7 +85,7 @@ class Bank:
 
 # ---- Main Menu Driven Program ----
 
-npl = Bank("Nagarjun Bank of India", "Mandya")
+npl = Bank("Nagarjun Bank of Indi", "Mandya")
 
 while True:
     print("\n--- Welcome to Nagarjun Bank ---")
