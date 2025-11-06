@@ -29,7 +29,10 @@ Each day, I’ll upload Python files demonstrating one or more OOP concepts, inc
 - 🔹 Inheritance (Single, Multiple, Multilevel, Hierarchical)  
 - 🔹 Polymorphism  
 - 🔹 Encapsulation & Abstraction  
-- 🔹 Method Overriding and Overloading (workaround in Python)  
+- 🔹 Method Overriding
+- 🔹 workaround
+- 🔹 Exception handling
+- 🔹 File handling
 - 🔹 Special Methods (`__str__`, `__len__`, etc.)  
 - 🔹 Real-world OOP examples and mini-projects  
 
